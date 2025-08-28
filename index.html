@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Order Request Servicing</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      max-width: 480px;
+      width: 100%;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+    .container:hover {
+      box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+      color: #333;
+      letter-spacing: 1.2px;
+    }
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      color: #555;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+      outline: none;
+      font-weight: 500;
+      color: #333;
+    }
+    input:focus, select:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 8px #4caf50aa;
+    }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(45deg, #4caf50, #388e3c);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(56,142,60,0.6);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #388e3c, #2e7d32);
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(46,125,50,0.8);
+    }
+    /* Responsive */
+    @media (max-width: 520px) {
+      .container {
+        padding: 25px 20px;
+      }
+      input, select {
+        padding: 10px 12px;
+      }
+      button {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Form Order Request Servicing</h2>
+
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSd9f2B4rsHfsXJuBwfGZsOYOkzPE0z1ptS0CQVbIXe3x8-Blg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+      <label for="requestDate">Request Date *</label>
+      <input type="date" id="requestDate" name="entry.1234567890" required>
+
+      <label for="segment">Segment *</label>
+      <select id="segment" name="entry.0987654321" required>
+        <option value="" disabled selected>Pilih Segment</option>
+        <option value="LEASING">LEASING</option>
+        <option value="DIRECT">DIRECT</option>
+        <option value="BROKER">BROKER</option>
+        <option value="BANCA">BANCA</option>
+        <option value="INWARD">INWARD</option>
+        <option value="AGENT">AGENT</option>
+      </select>
+
+      <label for="sbu">SBU *</label>
+      <select id="sbu" name="entry.1122334455" required>
+        <option value="" disabled selected>Pilih SBU</option>
+        <option value="BROKER 1">BROKER 1</option>
+        <option value="BROKER 2">BROKER 2</option>
+        <option value="DIRECT">DIRECT</option>
+        <option value="LEASING">LEASING</option>
+        <option value="AGENT">AGENT</option>
+        <option value="CABANG">CABANG</option>
+      </select>
+
+      <button type="submit">Kirim</button>
+
+    </form>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <script>
+    var submitted = false;
+    // bisa tambah alert atau redirect di sini kalau perlu
+  </script>
+
+</body>
+</html>
